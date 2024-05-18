@@ -54,11 +54,5 @@ RegisterNetEvent('ownablePets:throwDookie',function()
         ApplyForceToEntity(turdObj,1,forwardVector.x*force,forwardVector.y*force + 5.0,forwardVector.z,0,0,0,0,false,true,true,false,true)
         turdID = ObjToNet(turdObj)
         SetNetworkIdExistsOnAllMachines(turdObj,true)
-        curPet = GetGameTimer()
-        local doSomeMath = lastPet - curPet + 120000
-        if lastPet == 0 or doSomeMath < 0 then
-            lastPet = GetGameTimer()
-            petLoyalty = petLoyalty + 5
-        end
     end
 end)
